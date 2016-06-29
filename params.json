@@ -1,0 +1,6 @@
+{
+  "name": "Firebase Push Notification - Server Script",
+  "tagline": "",
+  "body": "This is a simple php file to send push notification to your mobile devices without using the all new Firebase console. It allows you to directly send notification from your web server.\r\n\r\nJust make sure that you enter your correct server auth key from firebase console as shown below:\r\n\r\n![Firebase Project Settings](http://adhishlal.com/api/capture.jpg)\r\n\r\nTo send the push notification use the following end point:\r\n\r\n`<yourdomainname>/sendnotification.php?id=<your_firebase_id>&title=<title>&body=<body>`\r\n\r\nExample:\r\n\r\n`http://adhishlal.com/api/sendnotification.php?id=fXPrxvHI1Eg:APA91bEjQiwDus8pA4s79RAY6TiQiUKUPFPNvxifNSY2L8G1HQLtuS-bmYiUIn24T8dI2EX_rkyjBVlPUFwyODM_NGoXGUqAGOWLZG_thYv8YNIzd_fNtZzDFz7BZacAeeoyE-JujR0_&title=Hey!&body=How%20are%20you?`\r\n\r\nThe firebase id is basically the client's id that is obtained on the client's side. \r\nFor example - For Android clients you can use following code:\r\n\r\n`FirebaseInstanceId.getInstance().getToken()`",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
