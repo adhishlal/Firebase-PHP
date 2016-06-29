@@ -1,23 +1,19 @@
 <?php
 // API access key from Google API's Console
-define( 'API_ACCESS_KEY', 'AIzaSyAu4MGXmNmkimcijVKHPdwp-JCfuRfm3pY' );
+define( 'API_ACCESS_KEY', 'YOUR_FIREBASE_API_ACCESS_KEY' );
 $registrationIds = array( $_GET['id'] );
 // prep the bundle
 $msg = array
 (
-	'message' 	=> 'here is a message. message',
-	'title'		=> 'This is a title. title',
-	'subtitle'	=> 'This is a subtitle. subtitle',
-	'tickerText'	=> 'Ticker text here...Ticker text here...Ticker text here',
+	'body' 	=> $_GET['body'],
+	'title'		=> $_GET['title'],
 	'vibrate'	=> 1,
 	'sound'		=> 1,
-	'largeIcon'	=> 'large_icon',
-	'smallIcon'	=> 'small_icon'
 );
 $fields = array
 (
 	'registration_ids' 	=> $registrationIds,
-	'data'			=> $msg
+	'notification'			=> $msg
 );
  
 $headers = array
@@ -27,7 +23,7 @@ $headers = array
 );
  
 $ch = curl_init();
-curl_setopt( $ch,CURLOPT_URL, 'https://android.googleapis.com/gcm/send' );
+curl_setopt( $ch,CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send' );
 curl_setopt( $ch,CURLOPT_POST, true );
 curl_setopt( $ch,CURLOPT_HTTPHEADER, $headers );
 curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true );
